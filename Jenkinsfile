@@ -26,6 +26,12 @@ pipeline {
                 sh 'mvn test'
             }
         }
+	stage ('Package'){
+            steps {
+                sh 'mvn package'
+            }
+        }
+
         stage('main branch validation') {
             when {
                 branch 'main'
